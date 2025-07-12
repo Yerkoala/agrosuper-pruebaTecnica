@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TareasListComponent } from './tareas/tareas-list/tareas-list.component';
+import { TareaFormComponent } from './tareas/tarea-form/tarea-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [ TareasListComponent, TareaFormComponent], 
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'] 
 })
 export class App {
   protected readonly title = signal('agrosuper');

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "titulo": "Comprar pan",
+    "descripcion": "Ir a la panadería a las 9am",
+    "completada": false
+  },
+  {
+    "id": 2,
+    "titulo": "Estudiar Angular",
+    "descripcion": "Revisar componentes y servicios",
+    "completada": false
+  },
+  {
+    "id": 3,
+    "titulo": "Ir al gimnasio",
+    "descripcion": "Rutina de fuerza",
+    "completada": true
+  }
+]

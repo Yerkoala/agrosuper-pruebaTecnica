@@ -1,0 +1,23 @@
+<h1 class="tituloTareasForm">Agregar nueva tarea</h1>
+
+<form (ngSubmit)="agregarTarea()" #form="ngForm" class="formularioAgregarTarea">
+    <div class="input-container">
+        <input id="titulo" type="tex" placeholder="Título" name="titulo" [(ngModel)]="nuevaTarea.titulo" required>
+        <span>
+        </span>
+    </div>
+
+    <div class="input-container descripcion" >
+        <input id="descripcion" type="tex" placeholder="Descripción" name="descripcion" [(ngModel)]="nuevaTarea.descripcion" required>
+        <span>
+        </span>
+    </div>
+
+    <mat-checkbox [(ngModel)]="nuevaTarea.completada" name="completada" class="checkCompletado">
+        Completada
+    </mat-checkbox>
+
+    <button type="submit" class="submit">
+        Agregar
+    </button>
+</form>

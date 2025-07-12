@@ -1,0 +1,20 @@
+.tituloTareasList{
+    font-weight: bold;
+    color: #424242;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.estadoSelect{
+    width: 120px;
+}
+
+.estado-select.completada .mat-select-value-text {
+  color: green;
+  font-weight: bold;
+}
+
+.estado-select.pendiente .mat-select-value-text {
+  color: red;
+  font-weight: bold;
+}
