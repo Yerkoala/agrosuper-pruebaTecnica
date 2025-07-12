@@ -43,3 +43,7 @@ src/
 #DESARROLLADO POR 
 Yerko Serrano 
 📧 yerkoserranoc@gmail.com
+
+📦 Demo en producción
+Puedes ver la aplicación desplegada en Azure Static Web Apps aquí:
+🔗 https://happy-moss-03d786710.2.azurestaticapps.net/
