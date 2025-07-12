@@ -21,8 +21,14 @@ export class TareasService {
   }
 
   private cargarTareas() {
-    this.http.get<Tarea[]>('assets/tareas.json').subscribe(tareas => {
-      this.tareasSubject.next(tareas);
+    this.http.get<Tarea[]>('assets/tareas.json').subscribe({
+      next: tareas => {
+        console.log('Tareas cargadas desde JSON:', tareas);
+        this.tareasSubject.next(tareas);
+      },
+      error: err => {
+        console.error('Error al cargar tareas desde JSON:', err);
+      }
     });
   }
 
@@ -31,6 +37,20 @@ export class TareasService {
     const nuevaTarea = { ...tarea, id: tareas.length + 1 };
     this.tareasSubject.next([...tareas, nuevaTarea]);
   }
+
+  eliminarTarea(id: number) {
+    const tareas = this.tareasSubject.value.filter(t => t.id !== id);
+    this.tareasSubject.next(tareas);
+  }
+
+  editarTarea(id: number, tareaEditada: Partial<Tarea>) {
+    const tareas = this.tareasSubject.value.map(t =>
+      t.id === id ? { ...t, ...tareaEditada } : t
+    );
+    this.tareasSubject.next(tareas);
+  }
+
+
 
   marcarComoCompletada(id: number) {
     const tareas = this.tareasSubject.value.map(t =>
